@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Hello Teachers</h1>
+{% block content %}
+<table>
+    <tr>
+        <th>Teachers</th>
+        <th>School</th>
+        <th> Subject</th>
+        <th> Hours</th>
+    </tr>
+
+    {% for x in teacher_list %}
+    <tr>
+        <a href="{% url 'details' x.teacher_id %}">{{ x.TeacherName }}</a>
+    </tr>
+    <tr>
+        <td>
+            {{ x.school }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ x.subject }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ x.hours }}
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<!--<h2>Add Teacher Info</h2>-->
+<a href="{% url 'form' %}">Add Info</a>
+
+{% endblock content %}
+
+
+</body>
+

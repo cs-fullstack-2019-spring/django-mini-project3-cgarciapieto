@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Teacher Details</h1>
+
+
+<a href="{% url 'details' %}">Add New User</a>
+{% for user in user_list %}
+<p><a href="{% url 'edit' details.teacher_id %}">
+    {{ x.current_teacher }}
+</a>
+</p>
+<p>{{x.school}}</p>
+<p>{{x.subject}}</p>
+<p>{{x.hours}}</p>
+<p>
+    <a href="{% url 'delete' details.teacher_id  %}">Delete User</a>
+</p>
+<hr/>
+
+{% endfor %}
+
+</body>
+</html>
